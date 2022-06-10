@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>blog.nicolasvignes.fr/</loc>
+    <loc>https://blog.nicolasvignes.fr/</loc>
     <lastmod>2022-06-10T22:26:32+02:00</lastmod>
   </url><url>
-    <loc>blog.nicolasvignes.fr/posts/</loc>
+    <loc>https://blog.nicolasvignes.fr/posts/</loc>
     <lastmod>2022-06-10T22:26:32+02:00</lastmod>
   </url><url>
-    <loc>blog.nicolasvignes.fr/posts/static-property-initialization/</loc>
+    <loc>https://blog.nicolasvignes.fr/posts/static-property-initialization/</loc>
     <lastmod>2022-06-10T22:26:32+02:00</lastmod>
   </url><url>
-    <loc>blog.nicolasvignes.fr/categories/</loc>
+    <loc>https://blog.nicolasvignes.fr/categories/</loc>
   </url><url>
-    <loc>blog.nicolasvignes.fr/tags/</loc>
+    <loc>https://blog.nicolasvignes.fr/tags/</loc>
   </url>
 </urlset>

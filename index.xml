@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>blog.nicolasvignes.fr/</link>
+    <link>https://blog.nicolasvignes.fr/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jun 2022 22:26:32 +0200</lastBuildDate><atom:link href="blog.nicolasvignes.fr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 22:26:32 +0200</lastBuildDate><atom:link href="https://blog.nicolasvignes.fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Static Property Initialization</title>
-      <link>blog.nicolasvignes.fr/posts/static-property-initialization/</link>
+      <link>https://blog.nicolasvignes.fr/posts/static-property-initialization/</link>
       <pubDate>Fri, 10 Jun 2022 22:26:32 +0200</pubDate>
       
-      <guid>blog.nicolasvignes.fr/posts/static-property-initialization/</guid>
+      <guid>https://blog.nicolasvignes.fr/posts/static-property-initialization/</guid>
       <description>Content Idea public class Toto </description>
     </item>
     
