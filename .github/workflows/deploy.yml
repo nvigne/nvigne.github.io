@@ -25,4 +25,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: actions/deploy-pages@v1
+      - name: Archive build output
+        run: tar --dereference --hard-dereference --directory . -cvf artifact.tar .
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: ./artifact.tar
+          if-no-files-found: warn
+      # - uses: actions/deploy-pages@v1
