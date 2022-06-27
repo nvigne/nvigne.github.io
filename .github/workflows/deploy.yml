@@ -26,14 +26,14 @@ jobs:
         run: hugo --minify
         
       - name: Archive build output
-        run: tar --dereference --hard-dereference --directory . -cvf artifact.tar .
+        run: tar --dereference --hard-dereference --directory ./public -cvf artifact.tar .
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
           name: github-pages
           path: ./artifact.tar
           if-no-files-found: warn
-      - name: Sleep for 30 seconds
+      - name: Sleep for 60 seconds
         run: sleep 60s
         shell: bash
 
