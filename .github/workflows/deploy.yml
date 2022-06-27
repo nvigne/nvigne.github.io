@@ -33,4 +33,4 @@ jobs:
           name: github-pages
           path: ./artifact.tar
           if-no-files-found: warn
-      # - uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v1
