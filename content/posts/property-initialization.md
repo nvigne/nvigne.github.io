@@ -1,7 +1,7 @@
 ---
 title: "Property Initialization"
 date: 2022-06-10T23:31:50+02:00
-draft: true
+draft: false
 ---
 
 [Properties](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties) in C# is a very convinient way to write code. A property can be initialized to a default value with the following:
