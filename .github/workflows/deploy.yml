@@ -23,6 +23,9 @@ jobs:
           name: github-pages
           path: ./artifact.tar
           if-no-files-found: warn
+      - name: Sleep for 30 seconds
+        run: sleep 60s
+        shell: bash
 
   # Deploy to Github pages
   deploy:
