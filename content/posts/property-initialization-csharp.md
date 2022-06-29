@@ -1,6 +1,6 @@
 ---
-title: "Property Initialization"
-date: 2022-06-10T23:31:50+02:00
+title: "Property Initialization in C#"
+date: 2022-06-29T12:00:00+02:00
 draft: false
 ---
 
@@ -22,8 +22,8 @@ In that case the `Item` property is not initialized with any value, instead each
 public object ItemA { get; } = new object();
 public object ItemB => new object();
 
-Debug.Assert(ItemA == ItemA);
-Debug.Assert(ItemB != ItemB)
+Debug.Assert(ItemA == ItemA); // true
+Debug.Assert(ItemB == ItemB); // false - failure 
 ```
 
 If we modify the object returned by an initialized property, it will modify the initialized instance of this property, and impact any other reference of it, like in the example below:
@@ -37,3 +37,5 @@ Item.member = 'test'
 
 Console.Output(itemB.member) // 'test'
 ```
+
+When doing this, you want to understand the lifetime of the object you are sharing and also how can other people can modify it.
