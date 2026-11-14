@@ -1,4 +1,4 @@
-languageCode: en-us
+locale: en-US
 title: Nicolas Vignes Blog
 theme: "PaperMod"
-baseUrl: https://blog.nicolasvignes.fr/
+baseURL: https://blog.nicolasvignes.fr/
