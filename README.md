@@ -37,3 +37,10 @@ vendored copy or requiring Go/Hugo Modules. To update it deliberately, run
 `git submodule update --remote themes/PaperMod`, rebuild, and commit the updated
 submodule reference. Update the Hugo version in the workflow and this document
 together.
+
+## Favicon
+
+The NV monogram assets live in `static` and are copied into the site root by Hugo.
+`favicon.svg` is the design source; keep the ICO, 16/32-pixel PNGs, 180-pixel
+Apple touch icon, and monochrome Safari mask in sync when changing the design.
+Their filenames match PaperMod's defaults, so no theme override is required.
