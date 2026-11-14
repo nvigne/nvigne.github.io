@@ -1,49 +1,57 @@
-name: Deploy Github Pages
+name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  # Build the content for GitHub Pages
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - uses: actions/checkout@v7
         with:
-          hugo-version: 'latest'
+          submodules: recursive
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.170.0"
+          extended: true
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v6
 
       - name: Build
-        run: hugo --minify
-        
-      - name: Archive build output
-        run: tar --dereference --hard-dereference --directory ./public -cvf artifact.tar .
-      - name: Upload Artifact
-        uses: actions/upload-artifact@main
-        with:
-          name: github-pages
-          path: ./artifact.tar
-          if-no-files-found: warn
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_BASEURL: ${{ steps.pages.outputs.base_url }}/
+        run: hugo --minify --panicOnWarning
 
-  # Deploy to Github pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: read
       pages: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v1
-    
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
